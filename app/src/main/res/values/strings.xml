@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">BiaTechTestApp</string>
+    <string name="try_again">Попробовать снова</string>
+    <string name="see_details">Посмотреть детали</string>
 </resources>
