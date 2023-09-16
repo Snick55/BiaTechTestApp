@@ -1,5 +1,6 @@
 package com.example.biatechtestapp.presentation.tasks
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -43,6 +44,7 @@ class TasksAdapter: RecyclerView.Adapter<TasksAdapter.TaskViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: TaskViewHolder, position: Int) {
+
         holder.bind(tasks[position])
     }
 
@@ -68,7 +70,6 @@ class TasksAdapter: RecyclerView.Adapter<TasksAdapter.TaskViewHolder>() {
                     addressFromTV.text = task.addressFrom
                     addressToTV.text = task.addressTo
                 }
-
             }
         }
 

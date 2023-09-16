@@ -1,9 +1,12 @@
 package com.example.biatechtestapp.presentation.tasks
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.biatechtestapp.core.LiveContainer
 import com.example.biatechtestapp.core.MutableLiveContainer
+import com.example.biatechtestapp.di.IoDispatcher
+import com.example.biatechtestapp.di.MainDispatcher
 import com.example.biatechtestapp.model.tasks.TasksRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
@@ -14,8 +17,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class TasksViewModel @Inject constructor(
-    private val dispatcherIo: CoroutineDispatcher = Dispatchers.IO,
-    private val dispatcherMain: CoroutineDispatcher = Dispatchers.Main,
+    @IoDispatcher private val dispatcherIo: CoroutineDispatcher,
+    @MainDispatcher private val dispatcherMain: CoroutineDispatcher,
     private val repository: TasksRepository
 ) : ViewModel() {
 
@@ -27,35 +30,38 @@ class TasksViewModel @Inject constructor(
         repository.getTasks().collect {
             withContext(dispatcherMain) {
                 _tasks.value = it.map { tasks ->
-                    tasks.map {
-                        if (it.isCurrent) {
+                    tasks.map {taskData->
+                        if (taskData.isCurrent) {
                             TaskItemUi.Current(
-                                it.id,
-                                it.typeProduct,
-                                it.addressFrom,
-                                it.date,
-                                it.addressTo,
-                                it.details,
-                                it.parameters
+                                taskData.id,
+                                taskData.typeProduct,
+                                taskData.addressFrom,
+                                taskData.date,
+                                taskData.addressTo,
+                                taskData.details,
+                                taskData.parameters
                             )
-                        } else if (it.isDone) {
-                            TaskItemUi.Done(
-                                it.id,
-                                it.typeProduct,
-                                it.addressFrom,
-                                it.date,
-                                it.addressTo
-                            )
-                        } else {
-                            TaskItemUi.Default(
-                                it.id,
-                                it.typeProduct,
-                                it.addressFrom,
-                                it.date,
-                                it.addressTo,
-                                it.details,
-                                it.parameters
-                            )
+                        }else{
+                            if (taskData.isDone) {
+                                TaskItemUi.Done(
+                                    taskData.id,
+                                    taskData.typeProduct,
+                                    taskData.addressFrom,
+                                    taskData.date,
+                                    taskData.addressTo
+                                )
+                            }
+                            else {
+                                TaskItemUi.Default(
+                                    taskData.id,
+                                    taskData.typeProduct,
+                                    taskData.addressFrom,
+                                    taskData.date,
+                                    taskData.addressTo,
+                                    taskData.details,
+                                    taskData.parameters
+                                )
+                            }
                         }
                     }
                 }

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragmentTasks">
+
+    <fragment
+        android:id="@+id/fragmentTasks"
+        android:name="com.example.biatechtestapp.presentation.tasks.FragmentTasks"
+        android:label="FragmentTasks" />
+</navigation>

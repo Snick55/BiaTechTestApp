@@ -2,4 +2,7 @@
     <string name="app_name">BiaTechTestApp</string>
     <string name="try_again">Попробовать снова</string>
     <string name="see_details">Посмотреть детали</string>
+    <string name="work_done">Работа Выполнена</string>
+    <string name="work_done_description">Задание было успешно выполнено</string>
+    <string name="current_task_text">Текущее задание</string>
 </resources>

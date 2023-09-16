@@ -34,7 +34,7 @@
             android:textColor="@color/grayMiddle"
             android:textSize="14sp"
             android:textStyle="normal"
-            tools:text="Текущее задание " />
+            android:text="@string/current_task_text" />
 
         <TextView
             android:id="@+id/dateTV"
@@ -56,10 +56,11 @@
             app:cardCornerRadius="12dp">
 
             <ImageView
+                android:layout_marginStart="12dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center|start"
-                android:src="@drawable/ic_down" />
+                android:src="@drawable/ic_travel" />
 
             <TextView
                 android:id="@+id/addressFromTV"
