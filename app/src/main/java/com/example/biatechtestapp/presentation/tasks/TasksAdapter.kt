@@ -1,6 +1,5 @@
 package com.example.biatechtestapp.presentation.tasks
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.biatechtestapp.databinding.TaskCurrentItemBinding
 import com.example.biatechtestapp.databinding.TaskDefaultItemBinding
 import com.example.biatechtestapp.databinding.TaskDoneItemBinding
+import com.example.biatechtestapp.presentation.tasks.entities.TaskItemUi
 
 class TasksAdapter: RecyclerView.Adapter<TasksAdapter.TaskViewHolder>() {
 

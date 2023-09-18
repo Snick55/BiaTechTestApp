@@ -1,4 +1,4 @@
-package com.example.biatechtestapp.presentation.tasks
+package com.example.biatechtestapp.presentation.tasks.entities
 
 
 sealed class TaskItemUi(val coreId:Int){
@@ -11,7 +11,7 @@ sealed class TaskItemUi(val coreId:Int){
         val addressTo: String,
         val details: String,
         val parameters: String
-    ):TaskItemUi(id)
+    ): TaskItemUi(id)
 
     data class Current(
         val id: Int,
@@ -21,7 +21,7 @@ sealed class TaskItemUi(val coreId:Int){
         val addressTo: String,
         val details: String,
         val parameters: String
-    ):TaskItemUi(id)
+    ): TaskItemUi(id)
 
     data class Done(
         val id: Int,
@@ -29,7 +29,7 @@ sealed class TaskItemUi(val coreId:Int){
         val addressFrom: String,
         val date:String,
         val addressTo: String,
-    ):TaskItemUi(id)
+    ): TaskItemUi(id)
 
 }
 

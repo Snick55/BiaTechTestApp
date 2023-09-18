@@ -1,6 +1,5 @@
 package com.example.biatechtestapp.presentation.tasks
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.biatechtestapp.core.LiveContainer
@@ -8,9 +7,9 @@ import com.example.biatechtestapp.core.MutableLiveContainer
 import com.example.biatechtestapp.di.IoDispatcher
 import com.example.biatechtestapp.di.MainDispatcher
 import com.example.biatechtestapp.model.tasks.TasksRepository
+import com.example.biatechtestapp.presentation.tasks.entities.TaskItemUi
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import javax.inject.Inject

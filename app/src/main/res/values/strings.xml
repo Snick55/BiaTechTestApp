@@ -5,4 +5,26 @@
     <string name="work_done">Работа Выполнена</string>
     <string name="work_done_description">Задание было успешно выполнено</string>
     <string name="current_task_text">Текущее задание</string>
+    <string name="type_product">Тип груза</string>
+    <string name="сity">Город исполнения</string>
+    <string name="date">дата заказа</string>
+    <string name="time">Время прибытия</string>
+    <string name="startLocatioin">Начальная точка маршрута</string>
+    <string name="endLocation">Конечная точка маршрута</string>
+    <string name="type_сarcase">Тип кузова</string>
+    <string name="task_detail">Детали заказа</string>
+    <string name="task_parameters">Параметры заказа</string>
+    <string name="contacts">Контакты</string>
+    <string name="parameters_text">Параметры по оплате</string>
+    <string name="details_text">Детали заказа</string>
+    <string name="client_rules">Правила клиента</string>
+    <string name="download">Скачать</string>
+    <string name="incident_text">Инцидент</string>
+    <string name="error_text">Ошибка</string>
+    <string name="add_docs_text">Прикрепить документы</string>
+    <string name="complete_task_text">Завершить заказ</string>
+    <string name="refuse_text">Отказаться от задания</string>
+    <string name="complete_task_hint">Для завершения заказа необходимо прикрепить документы</string>
+    <string name="accept_text">Принять</string>
+    <string name="decline_text">Отказаться</string>
 </resources>

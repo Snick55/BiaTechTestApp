@@ -1,6 +1,6 @@
-package com.example.biatechtestapp.model.tasks.entities
+package com.example.biatechtestapp.presentation.tasks.entities
 
-data class TaskData(
+data class TaskDetails(
     val id: Int,
     val typeProduct:String,
     val addressFrom: String,
@@ -13,6 +13,5 @@ data class TaskData(
     val number: String,
     val fio: String,
     val isCurrent: Boolean,
-    val isDone: Boolean,
-    val city: String = "Москва"
+    val city: String
 )

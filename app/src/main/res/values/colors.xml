@@ -12,5 +12,8 @@
     <color name="streetBackground">#F4F6F9</color>
     <color name="grayNormal">#7A7B85</color>
     <color name="grayMiddle">#B8C4DB</color>
+    <color name="gray">#EAEEF4</color>
     <color name="greenStatus">#59C617</color>
+    <color name="blue_link">#308ADD</color>
+    <color name="bt_color">#E5EAF2</color>
 </resources>

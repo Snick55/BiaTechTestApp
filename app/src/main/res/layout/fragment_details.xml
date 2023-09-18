@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.biatechtestapp.core.ResultView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.tasks.FragmentDetails">
+
+    <ScrollView
+
+        android:fillViewport="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/content"
+            android:visibility="invisible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="32dp"
+                android:layout_marginTop="12dp"
+                app:cardCornerRadius="18dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="@string/type_product"
+                        android:textColor="@color/grayNormal"
+                        android:textSize="12sp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:id="@+id/typeProduct"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:textColor="@color/dark"
+                        android:textSize="14sp"
+                        tools:text="Мебель" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp"
+                        android:text="@string/сity"
+                        android:textColor="@color/grayNormal"
+                        android:textSize="12sp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:id="@+id/city"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:textColor="@color/dark"
+                        android:textSize="14sp"
+                        tools:text="Мебель" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp"
+                        android:text="@string/date"
+                        android:textColor="@color/grayNormal"
+                        android:textSize="12sp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:id="@+id/orderDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:textColor="@color/dark"
+                        android:textSize="14sp"
+                        tools:text="Мебель" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp"
+                        android:text="@string/time"
+                        android:textColor="@color/grayNormal"
+                        android:textSize="12sp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:id="@+id/arrivalTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:textColor="@color/dark"
+                        android:textSize="14sp"
+                        tools:text="Мебель" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp"
+                        android:text="@string/startLocatioin"
+                        android:textColor="@color/grayNormal"
+                        android:textSize="12sp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:id="@+id/addressFrom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:textColor="@color/dark"
+                        android:textSize="14sp"
+                        tools:text="Мебель" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp"
+                        android:text="@string/endLocation"
+                        android:textColor="@color/grayNormal"
+                        android:textSize="12sp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:id="@+id/addressTo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:textColor="@color/dark"
+                        android:textSize="14sp"
+                        tools:text="Мебель" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp"
+                        android:text="@string/type_сarcase"
+                        android:textColor="@color/grayNormal"
+                        android:textSize="12sp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:id="@+id/typeCarcase"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:textColor="@color/dark"
+                        android:textSize="14sp"
+                        tools:text="Мебель" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp"
+                        android:text="@string/task_detail"
+                        android:textColor="@color/grayNormal"
+                        android:textSize="12sp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:id="@+id/orderDetails"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:textColor="@color/dark"
+                        android:textSize="14sp"
+                        tools:text="Мебель" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp"
+                        android:text="@string/task_parameters"
+                        android:textColor="@color/grayNormal"
+                        android:textSize="12sp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:id="@+id/orderParameters"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:textColor="@color/dark"
+                        android:textSize="14sp"
+                        tools:text="Мебель" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp"
+                        android:text="@string/contacts"
+                        android:textColor="@color/grayNormal"
+                        android:textSize="12sp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:id="@+id/numberTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:textColor="@color/blue_link"
+                        android:textSize="14sp"
+                        tools:text="Мебель" />
+
+                    <TextView
+                        android:id="@+id/fioTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:textColor="@color/dark"
+                        android:textSize="14sp"
+                        tools:text="Мебель" />
+
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="32dp"
+                android:layout_marginTop="12dp"
+                app:cardCornerRadius="18dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="@string/client_rules"
+                        android:textColor="@color/dark"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/downloadRulesButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="18dp"
+                        android:backgroundTint="@color/streetBackground"
+                        android:text="@string/download"
+                        android:textAllCaps="false"
+                        android:textColor="@color/dark"
+                        android:textSize="14sp"
+                        app:cornerRadius="18dp"
+                        app:icon="@drawable/ic_down"
+                        app:iconGravity="textStart"
+                        app:iconTint="@color/dark" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <LinearLayout
+                android:id="@+id/defaultContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/acceptTask"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="32dp"
+                    android:backgroundTint="@color/dark"
+                    android:text="@string/accept_text"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:cornerRadius="18dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/declineTask"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="32dp"
+                    android:backgroundTint="@color/bt_color"
+                    android:text="@string/decline_text"
+                    android:textAllCaps="false"
+                    android:textColor="@color/dark"
+                    android:textSize="14sp"
+                    app:cornerRadius="18dp" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/acceptedContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/incidentButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="32dp"
+                    android:backgroundTint="@color/white"
+                    android:text="@string/incident_text"
+                    android:textAllCaps="false"
+                    android:textColor="@color/dark"
+                    android:textSize="14sp"
+                    app:cornerRadius="16dp"
+                    app:icon="@drawable/ic_sparrow_right"
+                    app:iconGravity="end"
+                    app:iconTint="@color/dark" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/errorButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="32dp"
+                    android:backgroundTint="@color/white"
+                    android:text="@string/error_text"
+                    android:textAllCaps="false"
+                    android:textColor="@color/dark"
+                    android:textSize="14sp"
+                    app:cornerRadius="16dp"
+                    app:icon="@drawable/ic_sparrow_right"
+                    app:iconGravity="end"
+                    app:iconTint="@color/dark" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/addDocumentsButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="32dp"
+                    android:backgroundTint="@color/white"
+                    android:text="@string/add_docs_text"
+                    android:textAllCaps="false"
+                    android:textColor="@color/dark"
+                    android:textSize="14sp"
+                    app:cornerRadius="16dp"
+                    app:icon="@drawable/ic_sparrow_right"
+                    app:iconGravity="end"
+                    app:iconTint="@color/dark" />
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/completeTask"
+                    android:enabled="false"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="32dp"
+                    android:layout_marginTop="16dp"
+                    android:backgroundTint="@color/gray"
+                    android:text="@string/complete_task_text"
+                    android:textAllCaps="false"
+                    android:textColor="@color/grayMiddle"
+                    android:textSize="14sp"
+                    app:cornerRadius="18dp"
+                    />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/refuseButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="32dp"
+                    android:text="@string/refuse_text"
+                    android:textAllCaps="false"
+                    android:textColor="@color/dark"
+                    android:textSize="14sp"
+                    app:cornerRadius="18dp"
+                    android:backgroundTint="@color/gray" />
+
+
+                <TextView
+                    android:layout_marginHorizontal="32dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/grayMiddle"
+                    android:text="@string/complete_task_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</com.example.biatechtestapp.core.ResultView>

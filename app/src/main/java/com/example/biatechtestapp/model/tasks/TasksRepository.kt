@@ -11,12 +11,14 @@ interface TasksRepository {
 
     suspend fun getTasks(): Flow<Container<List<TaskData>>>
 
+    suspend fun getTaskById(id: Int): Flow<Container<TaskData>>
+
     class TasksRepositoryImpl @Inject constructor(
         private val cacheDataSource: TasksCacheDataSource,
         private val preferenceStore: PreferenceStore
     ) : TasksRepository {
         override suspend fun getTasks(): Flow<Container<List<TaskData>>> = flow {
-            if (preferenceStore.isFirstRun()){
+            if (preferenceStore.isFirstRun()) {
                 cacheDataSource.inflateTable()
                 preferenceStore.setFlag(false)
             }
@@ -25,10 +27,18 @@ interface TasksRepository {
                     emit(Container.Error(it))
                 }
                 .collect {
-                    Log.d("TAG","rep ${it.size}")
-                emit(Container.Success(it.map { taskDb -> taskDb.toTaskData() }))
-            }
+                    Log.d("TAG", "rep ${it.size}")
+                    emit(Container.Success(it.map { taskDb -> taskDb.toTaskData() }))
+                }
+        }
 
+
+        override suspend fun getTaskById(id: Int): Flow<Container<TaskData>> = flow {
+            cacheDataSource.getTaskById(id).catch {
+                emit(Container.Error(it))
+            }.collect {
+                emit(Container.Success(it.toTaskData()))
+            }
         }
     }
 }

@@ -1,5 +1,6 @@
 package com.example.biatechtestapp.model.tasks
 
+import com.example.biatechtestapp.model.tasks.entities.TaskData
 import com.example.biatechtestapp.model.tasks.entities.TaskDb
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
@@ -9,6 +10,8 @@ interface TasksCacheDataSource {
 
     suspend fun getTasks(): Flow<List<TaskDb>>
     suspend fun inflateTable()
+
+    suspend fun getTaskById(id:Int): Flow<TaskDb>
 
     class TasksCacheDataSourceImpl @Inject constructor(
         private val dao: TasksDao
@@ -118,7 +121,7 @@ interface TasksCacheDataSource {
         )
 
         override suspend fun getTasks(): Flow<List<TaskDb>> {
-            delay(2000)
+            delay(2000) // fake delay
             return dao.getTasks()
         }
 
@@ -126,6 +129,11 @@ interface TasksCacheDataSource {
             initialTasks.forEach {
                 dao.insertTask(it)
             }
+        }
+
+        override suspend fun getTaskById(id: Int): Flow<TaskDb> {
+            delay(2000) // fake delay
+           return dao.getTaskById(id)
         }
     }
 }
