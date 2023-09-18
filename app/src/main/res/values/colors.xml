@@ -16,4 +16,5 @@
     <color name="greenStatus">#59C617</color>
     <color name="blue_link">#308ADD</color>
     <color name="bt_color">#E5EAF2</color>
+    <color name="red">#F0303F</color>
 </resources>
