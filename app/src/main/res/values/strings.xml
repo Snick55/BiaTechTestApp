@@ -27,4 +27,12 @@
     <string name="complete_task_hint">Для завершения заказа необходимо прикрепить документы</string>
     <string name="accept_text">Принять</string>
     <string name="decline_text">Отказаться</string>
+    <string name="number_of_tabel">Табельный №</string>
+    <string name="mobile_number">Номер телефона</string>
+    <string name="nationality_text">Гражданство</string>
+    <string name="car_text">Машина</string>
+    <string name="car_numbers">Номера</string>
+    <string name="sick_list">Больничный лист</string>
+    <string name="notification">Оповещения</string>
+    <string name="log_out_text">Выйти</string>
 </resources>

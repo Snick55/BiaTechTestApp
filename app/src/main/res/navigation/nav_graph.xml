@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/fragmentChat">
+    app:startDestination="@id/fragmentProfile">
 
     <fragment
         android:id="@+id/fragmentTasks"
@@ -18,4 +18,8 @@
         android:id="@+id/fragmentChat"
         android:name="com.example.biatechtestapp.presentation.chat.FragmentChat"
         android:label="FragmentChat" />
+    <fragment
+        android:id="@+id/fragmentProfile"
+        android:name="com.example.biatechtestapp.presentation.profile.FragmentProfile"
+        android:label="FragmentProfile" />
 </navigation>

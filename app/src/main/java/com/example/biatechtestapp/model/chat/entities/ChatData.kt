@@ -6,5 +6,5 @@ data class ChatData(
     val name: String,
     val lastMessage: String,
     val timeOfLastMessage: String,
-    val countOfMessage: Int
+    val countOfMessage: Int,
 )
