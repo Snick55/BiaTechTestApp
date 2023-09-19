@@ -1,5 +1,6 @@
 package com.example.biatechtestapp.presentation.tasks
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
@@ -18,12 +19,12 @@ class FragmentDetails : Fragment(R.layout.fragment_details) {
 
     private val viewModel by viewModels<DetailsViewModel>()
     private val binding by viewBinding<FragmentDetailsBinding>()
-    private val args = 1  //by navArgs<FragmentDetailsArgs>()
+    private val args by navArgs<FragmentDetailsArgs>()
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val id = args
+        val id = args.id
 
         viewModel.getTaskById(id)
 
@@ -34,6 +35,15 @@ class FragmentDetails : Fragment(R.layout.fragment_details) {
             } else {
                 renderDefaultTask(it)
             }
+        }
+
+        binding.acceptTask.setOnClickListener {
+            binding.defaultContainer.visibility = View.GONE
+            viewModel.updateTask(id)
+        }
+        binding.declineTask.setOnClickListener {
+            binding.defaultContainer.visibility = View.GONE
+            binding.rulesContainer.isEnabled = false
         }
     }
 

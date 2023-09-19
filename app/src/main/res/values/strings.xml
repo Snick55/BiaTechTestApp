@@ -35,4 +35,9 @@
     <string name="sick_list">Больничный лист</string>
     <string name="notification">Оповещения</string>
     <string name="log_out_text">Выйти</string>
+    <string name="login">Войти</string>
+    <string name="tasks_text">задачи</string>
+    <string name="schedule_text">графики</string>
+    <string name="chat_text">чат</string>
+    <string name="profile_text">профиль</string>
 </resources>

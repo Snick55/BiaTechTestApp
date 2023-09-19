@@ -1,6 +1,6 @@
 package com.example.biatechtestapp.model.tasks
 
-import com.example.biatechtestapp.model.tasks.entities.TaskData
+import android.util.Log
 import com.example.biatechtestapp.model.tasks.entities.TaskDb
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
@@ -12,6 +12,7 @@ interface TasksCacheDataSource {
     suspend fun inflateTable()
 
     suspend fun getTaskById(id:Int): Flow<TaskDb>
+   suspend fun updateTask(taskDb: TaskDb)
 
     class TasksCacheDataSourceImpl @Inject constructor(
         private val dao: TasksDao
@@ -131,8 +132,12 @@ interface TasksCacheDataSource {
             }
         }
 
+        override suspend fun updateTask(taskDb: TaskDb) {
+            Log.d("TAG"," invoked and entity is $taskDb")
+            dao.updateTask(taskDb)
+        }
+
         override suspend fun getTaskById(id: Int): Flow<TaskDb> {
-            delay(2000) // fake delay
            return dao.getTaskById(id)
         }
     }

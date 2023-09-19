@@ -7,9 +7,11 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.biatechtestapp.R
+import com.example.biatechtestapp.core.findTopNavController
 import com.example.biatechtestapp.core.observe
 import com.example.biatechtestapp.core.viewBinding
 import com.example.biatechtestapp.databinding.FragmentTasksBinding
+import com.example.biatechtestapp.presentation.TabsFragmentDirections
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -21,7 +23,10 @@ class FragmentTasks : Fragment(R.layout.fragment_tasks) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val adapter = TasksAdapter()
+        val adapter = TasksAdapter( onTaskPressed = {
+            val direction = TabsFragmentDirections.actionTabsFragmentToFragmentDetails(it)
+            findTopNavController().navigate(direction)
+        })
         viewModel.getTasks()
 
         with(binding.tasksRV){

@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.bumptech.glide.Glide
 import com.example.biatechtestapp.R
+import com.example.biatechtestapp.core.findTopNavController
 import com.example.biatechtestapp.core.observe
 import com.example.biatechtestapp.core.viewBinding
 import com.example.biatechtestapp.databinding.FragmentProfileBinding
@@ -21,6 +22,11 @@ class FragmentProfile: Fragment(R.layout.fragment_profile) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.getProfile()
+
+        binding.logOutButton.setOnClickListener {
+            //viewModel.logout
+            findTopNavController().navigate(R.id.action_tabsFragment_to_fragmentLogin)
+        }
 
         binding.root.observe(viewLifecycleOwner,viewModel.profile){
             with(binding){

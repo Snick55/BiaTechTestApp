@@ -1,9 +1,6 @@
 package com.example.biatechtestapp.model.tasks
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import com.example.biatechtestapp.model.tasks.entities.TaskDb
 import kotlinx.coroutines.flow.Flow
 
@@ -18,5 +15,8 @@ interface TasksDao {
 
     @Query("SELECT * FROM tasks WHERE id = :id")
      fun getTaskById(id: Int): Flow<TaskDb>
+
+     @Update(entity = TaskDb::class, OnConflictStrategy.REPLACE)
+     suspend fun updateTask(id: TaskDb)
 
 }

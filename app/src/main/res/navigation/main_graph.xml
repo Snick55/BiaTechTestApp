@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/tabsFragment">
+
+    <fragment
+        android:id="@+id/tabsFragment"
+        android:name="com.example.biatechtestapp.presentation.TabsFragment"
+        android:label="Логин"
+        tools:layout="@layout/tabs_fragment" >
+        <action
+            android:id="@+id/action_tabsFragment_to_fragmentDetails"
+            app:destination="@id/fragmentDetails" />
+        <action
+            android:id="@+id/action_tabsFragment_to_fragmentLogin"
+            app:destination="@id/fragmentLogin" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentDetails"
+        android:name="com.example.biatechtestapp.presentation.tasks.FragmentDetails"
+        android:label="Детали задания"
+        tools:layout="@layout/fragment_details" >
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentLogin"
+        android:name="com.example.biatechtestapp.presentation.login.FragmentLogin"
+        android:label="Логин"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_fragmentLogin_to_tabsFragment"
+            app:destination="@id/tabsFragment" />
+    </fragment>
+</navigation>

@@ -49,4 +49,8 @@ class DetailsViewModel @Inject constructor(
         }
     }
 
+    fun updateTask(id: Int) = viewModelScope.launch(dispatcherIo) {
+        repository.updateTask(id)
+    }
+
 }
