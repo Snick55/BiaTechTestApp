@@ -34,7 +34,7 @@ interface AccountRepository {
         }
 
         override fun setAuthorize(boolean: Boolean) {
-            loginPreference.login(true)
+            loginPreference.login(boolean)
         }
     }
 

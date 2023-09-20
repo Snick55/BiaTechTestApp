@@ -2,6 +2,7 @@ package com.example.biatechtestapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -10,7 +11,9 @@ import androidx.navigation.NavDestination
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import com.example.biatechtestapp.databinding.ActivityMainBinding
+import com.example.biatechtestapp.databinding.FragmentSicklistBinding
 import com.example.biatechtestapp.presentation.TabsFragment
+import com.example.biatechtestapp.presentation.profile.FragmentSickList
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.regex.Pattern
 
@@ -23,10 +26,12 @@ class MainActivity : AppCompatActivity() {
 
     private val topLevelDestinations = setOf(getTabsDestination(), getSignInDestination())
 
+    private lateinit var binding: ActivityMainBinding
 
     private val fragmentListener = object : FragmentManager.FragmentLifecycleCallbacks() {
         override fun onFragmentViewCreated(fm: FragmentManager, f: Fragment, v: View, savedInstanceState: Bundle?) {
             super.onFragmentViewCreated(fm, f, v, savedInstanceState)
+            binding.toolbarAddButton.visibility = if (f is FragmentSickList) View.VISIBLE else View.GONE
             if (f is TabsFragment || f is NavHostFragment) return
             onNavControllerActivated(f.findNavController())
         }
@@ -34,7 +39,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding = ActivityMainBinding.inflate(layoutInflater).also { setContentView(it.root) }
+         binding = ActivityMainBinding.inflate(layoutInflater).also { setContentView(it.root) }
         setSupportActionBar(binding.toolbar)
 
         val navController = getRootNavController()

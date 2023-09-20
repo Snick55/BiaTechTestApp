@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.navOptions
 import com.bumptech.glide.Glide
 import com.example.biatechtestapp.R
 import com.example.biatechtestapp.core.findTopNavController
@@ -23,9 +24,18 @@ class FragmentProfile: Fragment(R.layout.fragment_profile) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.getProfile()
 
+
+        binding.sickListButton.setOnClickListener {
+            findTopNavController().navigate(R.id.action_tabsFragment_to_fragmentSickList)
+        }
+
         binding.logOutButton.setOnClickListener {
-            //viewModel.logout
-            findTopNavController().navigate(R.id.action_tabsFragment_to_fragmentLogin)
+            viewModel.logout()
+            findTopNavController().navigate(R.id.action_tabsFragment_to_fragmentLogin,null, navOptions{
+                popUpTo(R.id.tabsFragment){
+                    inclusive = true
+                }
+            })
         }
 
         binding.root.observe(viewLifecycleOwner,viewModel.profile){

@@ -39,4 +39,8 @@ class ProfileViewModel @Inject constructor(
         }
     }
 
+    fun logout() {
+        repository.setAuthorize(false)
+    }
+
 }

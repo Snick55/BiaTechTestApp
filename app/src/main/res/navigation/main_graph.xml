@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_tabsFragment_to_fragmentLogin"
             app:destination="@id/fragmentLogin" />
+        <action
+            android:id="@+id/action_tabsFragment_to_fragmentSickList"
+            app:destination="@id/fragmentSickList" />
     </fragment>
     <fragment
         android:id="@+id/fragmentDetails"
@@ -25,6 +28,9 @@
         <argument
             android:name="id"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_fragmentDetails_to_fragmentDocuments"
+            app:destination="@id/fragmentDocuments" />
     </fragment>
     <fragment
         android:id="@+id/fragmentLogin"
@@ -34,5 +40,21 @@
         <action
             android:id="@+id/action_fragmentLogin_to_tabsFragment"
             app:destination="@id/tabsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentSickList"
+        android:name="com.example.biatechtestapp.presentation.profile.FragmentSickList"
+        android:label="Больничный" />
+    <fragment
+        android:id="@+id/fragmentDocuments"
+        android:name="com.example.biatechtestapp.presentation.tasks.FragmentDocuments"
+        android:label="Документы" >
+        <argument
+            android:name="taskDetails"
+            app:argType="com.example.biatechtestapp.presentation.tasks.entities.TaskDetails" />
+        <action
+            android:id="@+id/action_fragmentDocuments_to_tabsFragment"
+            app:destination="@id/tabsFragment"
+            app:popUpToInclusive="false" />
     </fragment>
 </navigation>

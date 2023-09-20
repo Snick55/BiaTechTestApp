@@ -18,6 +18,15 @@
         style="@style/ToolbarTheme"
         >
 
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/toolbarAddButton"
+            android:layout_margin="8dp"
+            android:layout_gravity="end"
+            android:src="@drawable/ic_add_circle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
     </com.google.android.material.appbar.MaterialToolbar>
 
     <androidx.fragment.app.FragmentContainerView

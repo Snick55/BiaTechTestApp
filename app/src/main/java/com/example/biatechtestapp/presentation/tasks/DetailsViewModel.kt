@@ -7,6 +7,7 @@ import com.example.biatechtestapp.core.MutableLiveContainer
 import com.example.biatechtestapp.di.IoDispatcher
 import com.example.biatechtestapp.di.MainDispatcher
 import com.example.biatechtestapp.model.tasks.TasksRepository
+import com.example.biatechtestapp.model.tasks.entities.TaskData
 import com.example.biatechtestapp.presentation.tasks.entities.TaskDetails
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
@@ -49,8 +50,21 @@ class DetailsViewModel @Inject constructor(
         }
     }
 
-    fun updateTask(id: Int) = viewModelScope.launch(dispatcherIo) {
-        repository.updateTask(id)
+    fun updateTask(task: TaskDetails) = viewModelScope.launch(dispatcherIo) {
+        repository.updateTask(TaskData(task.id,
+            task.typeProduct,
+            task.addressFrom,
+            task.date,
+            task.time,
+            task.addressTo,
+            task.details,
+            task.parameters,
+            task.typeCarcase,
+            task.number,
+            task.fio,
+            !task.isCurrent,
+            false
+        ))
     }
 
 }

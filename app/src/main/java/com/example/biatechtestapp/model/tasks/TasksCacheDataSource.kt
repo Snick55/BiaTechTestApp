@@ -133,7 +133,6 @@ interface TasksCacheDataSource {
         }
 
         override suspend fun updateTask(taskDb: TaskDb) {
-            Log.d("TAG"," invoked and entity is $taskDb")
             dao.updateTask(taskDb)
         }
 

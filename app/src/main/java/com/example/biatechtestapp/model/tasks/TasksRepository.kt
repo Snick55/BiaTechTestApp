@@ -13,7 +13,7 @@ interface TasksRepository {
     suspend fun getTasks(): Flow<Container<List<TaskData>>>
 
     suspend fun getTaskById(id: Int): Flow<Container<TaskData>>
-   suspend  fun updateTask(id: Int)
+    suspend fun updateTask(task: TaskData)
 
     class TasksRepositoryImpl @Inject constructor(
         private val cacheDataSource: TasksCacheDataSource,
@@ -29,20 +29,29 @@ interface TasksRepository {
                     emit(Container.Error(it))
                 }
                 .collect {
-                    Log.d("TAG", "rep ${it.size}")
                     emit(Container.Success(it.map { taskDb -> taskDb.toTaskData() }))
                 }
         }
 
-        override suspend fun updateTask(id: Int) {
-            Log.d("TAG"," invoked and entity is $id")
-            var res: TaskDb? = null
-            cacheDataSource.getTaskById(id).collectLatest {
-                Log.d("TAG"," invoked and entity in collect is $it")
-                res = it
-                val newTask = it.copy(isCurrent = true)
-                cacheDataSource.updateTask(newTask!!)
-            }
+        override suspend fun updateTask(task: TaskData) {
+
+            cacheDataSource.updateTask(
+                TaskDb(
+                    task.id,
+                    task.typeProduct,
+                    task.addressFrom,
+                    task.date,
+                    task.time,
+                    task.addressTo,
+                    task.details,
+                    task.parameters,
+                    task.typeCarcase,
+                    task.number,
+                    task.fio,
+                    task.isCurrent,
+                    task.isDone
+                )
+            )
 
 
         }

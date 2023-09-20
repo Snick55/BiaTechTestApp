@@ -14,4 +14,4 @@ data class TaskDetails(
     val fio: String,
     val isCurrent: Boolean,
     val city: String
-)
+): java.io.Serializable
